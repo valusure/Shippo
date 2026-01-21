@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réduisez vos Frais d'Expédition jusqu'à 90% | Shippo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header/Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px 60px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.2em;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .trust-badge {
+            margin-top: 30px;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        /* Problem Section */
+        .problem {
+            padding: 60px 20px;
+            background: #f8f9fa;
+        }
+        
+        .problem h2 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            color: #2d3748;
+        }
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .problem-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .problem-item .icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        .problem-item h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: #e53e3e;
+        }
+        
+        /* Solution Section */
+        .solution {
+            padding: 60px 20px;
+        }
+        
+        .solution h2 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 50px;
+            color: #2d3748;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .benefit-card {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .benefit-card .icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+        
+        .benefit-card p {
+            color: #4a5568;
+            font-size: 1.05em;
+        }
+        
+        /* Savings Calculator */
+        .calculator {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 60px 20px;
+            color: white;
+        }
+        
+        .calculator h2 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+        }
+        
+        .calc-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .calc-input {
+            margin-bottom: 25px;
+        }
+        
+        .calc-input label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+        
+        .calc-input input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 8px;
+            background: white;
+        }
+        
+        .calc-result {
+            background: rgba(255,255,255,0.2);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .calc-result h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+        
+        .savings-amount {
+            font-size: 3em;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        
+        /* Comparison */
+        .comparison {
+            padding: 60px 20px;
+            background: #f8f9fa;
+        }
+        
+        .comparison h2 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 50px;
+            color: #2d3748;
+        }
+        
+        .comparison-table {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .comparison-row:first-child {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+        
+        .check {
+            color: #48bb78;
+            font-size: 1.5em;
+        }
+        
+        .cross {
+            color: #f56565;
+            font-size: 1.5em;
+        }
+        
+        /* Social Proof */
+        .testimonials {
+            padding: 60px 20px;
+        }
+        
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 50px;
+            color: #2d3748;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial .stars {
+            color: #ffc107;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            color: #4a5568;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .testimonial .author {
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        .testimonial .role {
+            color: #718096;
+            font-size: 0.9em;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .final-cta h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .final-cta p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .features-list {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            text-align: left;
+        }
+        
+        .features-list li {
+            padding: 10px 0;
+            font-size: 1.1em;
+            list-style: none;
+        }
+        
+        .features-list li:before {
+            content: "✓ ";
+            color: #48bb78;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #2d3748;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .disclaimer {
+            font-size: 0.85em;
+            opacity: 0.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .comparison-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-row > div:first-child {
+                font-weight: 600;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Réduisez Vos Frais d'Expédition jusqu'à 90%</h1>
+            <p class="subtitle">Économisez des milliers d'euros par an et automatisez vos expéditions e-commerce avec Shippo</p>
+            <a href="#" class="cta-button" id="main-cta">Commencer Gratuitement →</a>
+            <p class="trust-badge">✓ Gratuit jusqu'à 30 étiquettes/mois • Sans engagement • Installation en 5 minutes</p>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <h2>Les Frais d'Expédition Tuent Vos Marges ?</h2>
+            <div class="problem-grid">
+                <div class="problem-item">
+                    <div class="icon">💸</div>
+                    <h3>Tarifs Trop Élevés</h3>
+                    <p>Vous payez les tarifs publics au lieu des tarifs négociés des grandes entreprises</p>
+                </div>
+                <div class="problem-item">
+                    <div class="icon">⏰</div>
+                    <h3>Perte de Temps</h3>
+                    <p>2-3 heures par jour perdues à créer manuellement des étiquettes d'expédition</p>
+                </div>
+                <div class="problem-item">
+                    <div class="icon">🤯</div>
+                    <h3>Gestion Complexe</h3>
+                    <p>Jongler entre plusieurs transporteurs et plateformes e-commerce est un cauchemar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution">
+        <div class="container">
+            <h2>Shippo : La Solution Tout-en-Un pour Vos Expéditions</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="icon">💰</div>
+                    <h3>Tarifs Imbattables</h3>
+                    <p>Accédez aux tarifs négociés USPS, UPS, DHL et économisez jusqu'à 90% sur chaque envoi</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">⚡</div>
+                    <h3>Automatisation Totale</h3>
+                    <p>Créez des étiquettes en masse, synchronisez avec Shopify, WooCommerce, Amazon en 1 clic</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">📊</div>
+                    <h3>Suivi Simplifié</h3>
+                    <p>Tableau de bord unifié pour suivre toutes vos expéditions et informer automatiquement vos clients</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">🔗</div>
+                    <h3>Intégrations Faciles</h3>
+                    <p>Compatible avec toutes les plateformes : Shopify, WooCommerce, Etsy, eBay, Amazon, Magento</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="calculator">
+        <div class="container">
+            <h2>Calculez Vos Économies Potentielles</h2>
+            <div class="calc-container">
+                <div class="calc-input">
+                    <label for="packages">Nombre de colis expédiés par mois :</label>
+                    <input type="number" id="packages" value="100" min="1">
+                </div>
+                <div class="calc-input">
+                    <label for="cost">Coût moyen actuel par colis (€) :</label>
+                    <input type="number" id="cost" value="8" min="0" step="0.1">
+                </div>
+                <div class="calc-result">
+                    <h3>Avec Shippo, vous économisez :</h3>
+                    <div class="savings-amount" id="savings">432€</div>
+                    <p>par mois, soit <strong id="yearly">5 184€</strong> par an !</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="comparison">
+        <div class="container">
+            <h2>Pourquoi Choisir Shippo ?</h2>
+            <div class="comparison-table">
+                <div class="comparison-row">
+                    <div>Fonctionnalité</div>
+                    <div>Shippo</div>
+                    <div>ShipStation</div>
+                    <div>Sans solution</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Tarifs négociés transporteurs</div>
+                    <div><span class="check">✓</span></div>
+                    <div><span class="check">✓</span></div>
+                    <div><span class="cross">✗</span></div>
+                </div>
+                <div class="comparison-row">
+                    <div>Gratuit jusqu'à 30 étiquettes/mois</div>
+                    <div><span class="check">✓</span></div>
+                    <div><span class="cross">✗</span></div>
+                    <div><span class="check">✓</span></div>
+                </div>
+                <div class="comparison-row">
+                    <div>Intégrations illimitées</div>
+                    <div><span class="check">✓</span></div>
+                    <div><span class="check">✓</span></div>
+                    <div><span class="cross">✗</span></div>
+                </div>
+                <div class="comparison-row">
+                    <div>API complète</div>
+                    <div><span class="check">✓</span></div>
+                    <div><span class="check">✓</span></div>
+                    <div><span class="cross">✗</span></div>
+                </div>
+                <div class="comparison-row">
+                    <div>Prix mensuel (100+ étiquettes)</div>
+                    <div>10€</div>
+                    <div>50€+</div>
+                    <div>-</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Ils Ont Déjà Économisé des Milliers d'Euros</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"Shippo nous a fait économiser plus de 3 000€ en 6 mois. L'intégration avec Shopify est parfaite et l'automatisation nous fait gagner 10h par semaine."</p>
+                    <div class="author">Marie L.</div>
+                    <div class="role">Boutique mode en ligne</div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"En tant que dropshipper, je gère 200+ commandes/mois. Avant Shippo, c'était l'enfer. Maintenant tout est automatisé, je ne peux plus m'en passer."</p>
+                    <div class="author">Thomas B.</div>
+                    <div class="role">Dropshipping multi-niches</div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"Interface ultra simple, tarifs imbattables. On a réduit nos coûts d'expédition de 67% en passant à Shippo. ROI immédiat !"</p>
+                    <div class="author">Sophie K.</div>
+                    <div class="role">PME e-commerce</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Prêt à Réduire Vos Coûts d'Expédition ?</h2>
+            <p>Rejoignez plus de 100 000 e-commerçants qui utilisent Shippo</p>
+            <ul class="features-list">
+                <li>Installation en moins de 5 minutes</li>
+                <li>Gratuit jusqu'à 30 étiquettes par mois</li>
+                <li>Sans engagement, annulez quand vous voulez</li>
+                <li>Support client réactif 7j/7</li>
+                <li>Tarifs négociés avec tous les transporteurs majeurs</li>
+            </ul>
+            <a href="#" class="cta-button" id="footer-cta">Créer Mon Compte Gratuit →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="disclaimer">
+                Disclaimer : Cette page contient des liens d'affiliation. Si vous vous inscrivez via nos liens, nous pouvons recevoir une commission sans frais supplémentaires pour vous. Les tarifs et fonctionnalités mentionnés sont basés sur les informations publiques de Shippo et peuvent varier.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Calculator functionality
+        const packagesInput = document.getElementById('packages');
+        const costInput = document.getElementById('cost');
+        const savingsDisplay = document.getElementById('savings');
+        const yearlyDisplay = document.getElementById('yearly');
+
+        function calculateSavings() {
+            const packages = parseInt(packagesInput.value) || 0;
+            const currentCost = parseFloat(costInput.value) || 0;
+            
+            // Assuming 54% average savings with Shippo
+            const savingsPercent = 0.54;
+            const monthlySavings = packages * currentCost * savingsPercent;
+            const yearlySavings = monthlySavings * 12;
+            
+            savingsDisplay.textContent = monthlySavings.toFixed(0) + '€';
+            yearlyDisplay.textContent = yearlySavings.toLocaleString('fr-FR') + '€';
+        }
+
+        packagesInput.addEventListener('input', calculateSavings);
+        costInput.addEventListener('input', calculateSavings);
+
+        // CTA clicks - Replace '#' with your actual Shippo affiliate link
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Replace this URL with your actual Shippo affiliate link
+                const affiliateLink = 'https://goshippo.com/?ref=YOUR_AFFILIATE_ID';
+                // Uncomment the line below when you have your affiliate link
+                // window.open(affiliateLink, '_blank');
+                
+                console.log('CTA clicked - Add your Shippo affiliate link here');
+            });
+        });
+
+        // Initial calculation
+        calculateSavings();
+    </script>
+</body>
+</html>
